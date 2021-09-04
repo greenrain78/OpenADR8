@@ -12,6 +12,12 @@ ENV LC_ALL=C.UTF-8
 #RUN mkdir /project
 WORKDIR /project
 
+# docker 설치
+RUN apt-get update
+RUN apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+
 # 파이썬 라이브러리 설치
 COPY requirements.txt /project
 RUN pip install --upgrade pip
