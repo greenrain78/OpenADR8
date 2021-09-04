@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./Monitoring:/project
+      - /var/run/docker.sock:/var/run/docker.sock
 #    tty : true
     environment:
       TZ: Asia/Seoul
