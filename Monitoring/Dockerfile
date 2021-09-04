@@ -24,4 +24,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # -u 옵션으로 버퍼없이 즉시 출력
-ENTRYPOINT ["python", "-u", "./examples.py"]
+ENTRYPOINT ["python", "-u", "./main.py"]
